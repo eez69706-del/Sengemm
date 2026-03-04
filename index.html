@@ -17,7 +17,6 @@ html,body{height:100%;}
 body{font-family:'Cairo',sans-serif;background:var(--b);color:var(--text);min-height:100vh;overflow-x:hidden;}
 .screen{display:none;min-height:100vh;}
 .screen.active{display:flex;}
-
 .btn-y{background:var(--y);color:#000;border:none;border-radius:12px;padding:12px 30px;font-family:'Cairo',sans-serif;font-weight:900;font-size:.95rem;cursor:pointer;transition:transform .15s,box-shadow .15s;display:inline-flex;align-items:center;gap:7px;}
 .btn-y:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,215,0,.28);}
 .btn-y:disabled{opacity:.35;cursor:not-allowed;transform:none;box-shadow:none;}
@@ -32,12 +31,9 @@ textarea.inp{resize:vertical;min-height:55px;}
 #s-cats{flex-direction:column;align-items:center;padding:44px 20px 70px;background:radial-gradient(ellipse 80% 50% at 50% 0%,#16143a 0%,var(--b) 65%);}
 .pg-title{font-size:clamp(2rem,7vw,3rem);font-weight:900;color:var(--y);text-align:center;margin-bottom:6px;}
 .pg-sub{color:var(--muted2);font-size:.9rem;text-align:center;margin-bottom:26px;}
-
-/* Nav bar on home */
 .home-nav{display:flex;gap:10px;justify-content:center;margin-bottom:20px;}
 .nav-lb-btn{background:var(--b4);border:2px solid var(--border2);color:var(--muted2);border-radius:11px;padding:9px 20px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:7px;}
 .nav-lb-btn:hover{border-color:var(--y);color:var(--y);}
-
 .sel-bar{width:100%;max-width:840px;background:var(--b4);border:1px solid var(--border2);border-radius:13px;padding:12px 22px;text-align:center;font-weight:700;color:var(--muted2);font-size:.88rem;margin-bottom:18px;transition:color .3s;}
 .sel-bar.has{color:var(--y);}
 .setup-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:13px;width:100%;max-width:840px;margin-bottom:26px;}
@@ -105,14 +101,13 @@ textarea.inp{resize:vertical;min-height:55px;}
 .turn-indicator{text-align:center;font-size:.78rem;color:var(--muted2);padding:5px 0;flex-shrink:0;}
 .turn-indicator span{color:var(--y);font-weight:900;}
 .cats-board{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:12px 18px;overflow-y:auto;max-width:1100px;align-self:center;width:100%;}
-.cat-col{background:var(--b4);border:1px solid var(--border2);border-radius:18px;display:grid;grid-template-rows:repeat(3,1fr);min-height:210px;overflow:hidden;position:relative;}
+.cat-col{background:var(--b4);border:1px solid var(--border2);border-radius:18px;display:grid;grid-template-rows:repeat(4,1fr);min-height:260px;overflow:hidden;position:relative;}
 .pts-row{display:flex;align-items:center;justify-content:space-between;padding:0 10px;}
-.pts-box{font-size:clamp(.9rem,2vw,1.15rem);font-weight:900;color:var(--muted2);cursor:pointer;transition:all .2s;user-select:none;padding:14px 8px;position:relative;z-index:2;}
+.pts-box{font-size:clamp(.85rem,1.8vw,1.1rem);font-weight:900;color:var(--muted2);cursor:pointer;transition:all .2s;user-select:none;padding:12px 6px;position:relative;z-index:2;}
 .pts-box:hover:not(.used){color:var(--y);transform:scale(1.1);}
 .pts-box.used{color:transparent;cursor:default;pointer-events:none;}
 .pts-box.used::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:1rem;}
 .pts-mid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;pointer-events:none;z-index:1;}
-.pts-mid-num{font-size:.7rem;font-weight:900;color:var(--y);}
 .col-icon{font-size:1.4rem;line-height:1;}
 .col-name{font-size:.58rem;font-weight:900;text-align:center;color:var(--muted2);line-height:1.2;max-width:60px;}
 
@@ -133,14 +128,17 @@ textarea.inp{resize:vertical;min-height:55px;}
 .lifeline-btn{background:var(--b5);border:1.5px solid var(--border2);border-radius:11px;padding:10px 12px;cursor:pointer;font-family:'Cairo',sans-serif;font-weight:700;font-size:.8rem;color:var(--text);text-align:right;transition:all .2s;display:flex;align-items:center;gap:7px;}
 .lifeline-btn:hover:not(.used-ll){border-color:var(--y);color:var(--y);}
 .lifeline-btn.used-ll{opacity:.35;cursor:not-allowed;text-decoration:line-through;}
-.lifeline-hole{border-color:#ff6b35 !important;color:#ff6b35 !important;}
-.lifeline-hole:hover:not(.used-ll){background:rgba(255,107,53,.1) !important;border-color:#ff4500 !important;color:#ff4500 !important;box-shadow:0 0 12px rgba(255,107,53,.3);}
+.lifeline-hole{border-color:#ff6b35!important;color:#ff6b35!important;}
+.lifeline-hole:hover:not(.used-ll){background:rgba(255,107,53,.1)!important;border-color:#ff4500!important;color:#ff4500!important;box-shadow:0 0 12px rgba(255,107,53,.3);}
 .skip-btn{background:var(--b5);border:1.5px solid var(--border2);border-radius:11px;padding:10px 12px;cursor:pointer;font-family:'Cairo',sans-serif;font-weight:700;font-size:.8rem;color:var(--muted2);text-align:right;transition:all .2s;display:flex;align-items:center;gap:7px;width:100%;margin-top:auto;}
 .skip-btn:hover{border-color:#ff8800;color:#ff8800;}
 .q-col-main{flex:1.5;background:var(--b4);border-right:1px solid var(--border2);border-left:1px solid var(--border2);display:flex;flex-direction:column;align-items:center;padding:72px 22px 30px;gap:14px;min-width:0;overflow-y:auto;}
 .q-header-tags{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center;}
 .q-pts-tag{background:var(--y);color:#000;border-radius:20px;padding:5px 18px;font-weight:900;font-size:.88rem;}
 .q-cat-tag{background:var(--b5);border:1px solid var(--border2);color:var(--muted2);border-radius:20px;padding:5px 14px;font-size:.78rem;font-weight:700;}
+.q-diff-tag{border-radius:20px;padding:5px 14px;font-size:.72rem;font-weight:900;}
+.q-diff-tag.hard{background:rgba(255,136,0,.15);color:#ff8800;border:1px solid #ff8800;}
+.q-diff-tag.vhard{background:rgba(255,51,51,.15);color:#ff3333;border:1px solid #ff3333;}
 .q-text-box{font-size:clamp(1rem,2.5vw,1.3rem);font-weight:700;line-height:1.6;text-align:center;background:var(--b5);border:1px solid var(--border2);border-radius:14px;padding:20px 18px;width:100%;}
 .q-opts-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;width:100%;}
 .q-opt-btn{background:var(--b5);border:2px solid var(--border2);border-radius:11px;padding:12px 10px;cursor:pointer;font-family:'Cairo',sans-serif;font-weight:700;font-size:.86rem;color:var(--text);text-align:center;transition:all .18s;line-height:1.3;}
@@ -179,16 +177,14 @@ textarea.inp{resize:vertical;min-height:55px;}
 .r-save-btn:hover{border-color:var(--y);color:var(--y);}
 .r-btn-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
 
-/* ===================== LEADERBOARD SCREEN ===================== */
+/* LEADERBOARD */
 #s-lb{flex-direction:column;align-items:center;padding:44px 20px 70px;background:radial-gradient(ellipse 80% 50% at 50% 0%,#16143a 0%,var(--b) 65%);}
 .lb-wrap{width:100%;max-width:700px;display:flex;flex-direction:column;gap:0;}
 .lb-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;}
 .lb-title{font-size:clamp(1.8rem,6vw,2.6rem);font-weight:900;color:var(--y);}
 .lb-list{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;min-height:60px;}
 .lb-empty{color:var(--muted2);font-size:.9rem;text-align:center;padding:32px 0;}
-
-/* Leaderboard row */
-.lb-row{background:var(--b4);border:1.5px solid var(--border2);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;transition:border-color .2s;position:relative;overflow:hidden;}
+.lb-row{background:var(--b4);border:1.5px solid var(--border2);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;transition:border-color .2s;}
 .lb-row.top1{border-color:var(--y);background:rgba(255,215,0,.05);}
 .lb-row.top2{border-color:#c0c0c0;background:rgba(192,192,192,.04);}
 .lb-row.top3{border-color:#cd7f32;background:rgba(205,127,50,.04);}
@@ -206,7 +202,7 @@ textarea.inp{resize:vertical;min-height:55px;}
 .lb-edit-btn:hover{border-color:var(--y);color:var(--y);}
 .lb-del-btn:hover{border-color:#ff3737;color:#ff3737;}
 
-/* Modal overlay */
+/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:500;display:none;align-items:center;justify-content:center;padding:20px;}
 .modal-overlay.open{display:flex;}
 .modal-box{background:var(--b3);border:1.5px solid var(--border2);border-radius:20px;padding:28px 24px;width:100%;max-width:380px;display:flex;flex-direction:column;gap:16px;animation:mslide .25s ease;}
@@ -219,7 +215,7 @@ textarea.inp{resize:vertical;min-height:55px;}
 .modal-inp.num{text-align:center;font-size:1.2rem;font-weight:900;}
 .modal-btns{display:flex;gap:10px;justify-content:center;}
 
-/* ===================== CONFIRM MODAL ===================== */
+/* CONFIRM */
 #confirm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:600;display:none;align-items:center;justify-content:center;padding:20px;}
 #confirm-overlay.open{display:flex;}
 .confirm-box{background:var(--b3);border:1.5px solid var(--border2);border-radius:20px;padding:28px 24px;width:100%;max-width:340px;display:flex;flex-direction:column;gap:16px;align-items:center;animation:mslide .25s ease;}
@@ -231,7 +227,7 @@ textarea.inp{resize:vertical;min-height:55px;}
 .confirm-no{background:var(--b5);border:1.5px solid var(--border2);color:var(--muted2);border-radius:10px;padding:10px 26px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .2s;flex:1;}
 .confirm-no:hover{border-color:var(--muted2);color:var(--text);}
 
-/* ===================== TOAST ===================== */
+/* TOAST */
 #toast-wrap{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:700;display:flex;flex-direction:column;align-items:center;gap:9px;pointer-events:none;}
 .toast{background:var(--b3);border:1.5px solid var(--border2);border-radius:12px;padding:10px 22px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.88rem;color:var(--text);display:flex;align-items:center;gap:9px;box-shadow:0 8px 28px rgba(0,0,0,.5);animation:tslide .3s ease;white-space:nowrap;}
 .toast.success{border-color:#00d26e;background:rgba(0,210,110,.08);color:#00d26e;}
@@ -241,7 +237,6 @@ textarea.inp{resize:vertical;min-height:55px;}
 @keyframes tslide{from{opacity:0;transform:translateY(-14px);}to{opacity:1;transform:translateY(0);}}
 @keyframes thide{from{opacity:1;transform:translateY(0);}to{opacity:0;transform:translateY(-14px);}}
 
-/* misc */
 .cp{position:fixed;top:-20px;border-radius:2px;animation:cfall linear forwards;z-index:999;pointer-events:none;}
 @keyframes cfall{to{transform:translateY(110vh) rotate(720deg);opacity:0;}}
 #flash{position:fixed;inset:0;background:rgba(255,215,0,.08);pointer-events:none;opacity:0;transition:opacity .18s;z-index:200;}
@@ -267,7 +262,7 @@ textarea.inp{resize:vertical;min-height:55px;}
 <body>
 <div id="flash"></div>
 
-<!-- MODAL -->
+<!-- LB MODAL -->
 <div class="modal-overlay" id="lb-modal">
   <div class="modal-box">
     <div class="modal-title" id="modal-title">إضافة فريق</div>
@@ -286,7 +281,7 @@ textarea.inp{resize:vertical;min-height:55px;}
   </div>
 </div>
 
-<!-- S1 -->
+<!-- S1: اختيار الفئات -->
 <div class="screen active" id="s-cats">
   <h1 class="pg-title">⚡ كويز باتل</h1>
   <p class="pg-sub">اختر الفئات التي تريد اللعب بها</p>
@@ -300,7 +295,7 @@ textarea.inp{resize:vertical;min-height:55px;}
   </div>
 </div>
 
-<!-- S2 -->
+<!-- S2: محرر الأسئلة -->
 <div class="screen" id="s-questions">
   <div class="qed-wrap">
     <div class="qed-header">
@@ -315,7 +310,7 @@ textarea.inp{resize:vertical;min-height:55px;}
   </div>
 </div>
 
-<!-- S3 -->
+<!-- S3: أسماء الفرق -->
 <div class="screen" id="s-teams">
   <div class="teams-form">
     <h2>أسماء الفرق</h2>
@@ -334,7 +329,7 @@ textarea.inp{resize:vertical;min-height:55px;}
   </div>
 </div>
 
-<!-- S4 -->
+<!-- S4: لوحة اللعب -->
 <div class="screen" id="s-game">
   <div class="gbar">
     <div class="gbar-logo">⚡ كويز باتل</div>
@@ -359,7 +354,7 @@ textarea.inp{resize:vertical;min-height:55px;}
   <div class="cats-board" id="cats-board"></div>
 </div>
 
-<!-- S5 -->
+<!-- S5: شاشة السؤال -->
 <div class="screen" id="s-question">
   <div class="q-timer-fixed" id="q-timer-el">00:30</div>
   <div class="q-logo-fixed">⚡ كويز باتل</div>
@@ -379,6 +374,7 @@ textarea.inp{resize:vertical;min-height:55px;}
     <div class="q-header-tags">
       <div class="q-pts-tag" id="qm-pts-main">200 نقطة</div>
       <div class="q-cat-tag" id="qm-cat-main">-</div>
+      <div class="q-diff-tag" id="qm-diff-main">-</div>
     </div>
     <div class="q-text-box" id="q-text-main">-</div>
     <div class="q-opts-grid" id="q-opts-grid" style="display:none;"></div>
@@ -415,7 +411,7 @@ textarea.inp{resize:vertical;min-height:55px;}
   </div>
 </div>
 
-<!-- S6 - RESULT -->
+<!-- S6: النتيجة -->
 <div class="screen" id="s-result">
   <div class="r-trophy" id="r-trophy">🏆</div>
   <div class="r-winner" id="r-winner">-</div>
@@ -431,7 +427,7 @@ textarea.inp{resize:vertical;min-height:55px;}
   </div>
 </div>
 
-<!-- S7 - LEADERBOARD -->
+<!-- S7: لوحة النتائج -->
 <div class="screen" id="s-lb">
   <div class="lb-wrap">
     <div class="lb-header">
@@ -449,7 +445,7 @@ textarea.inp{resize:vertical;min-height:55px;}
 </div>
 
 <!-- CONFIRM MODAL -->
-<div id="confirm-overlay" style="display:none;">
+<div id="confirm-overlay">
   <div class="confirm-box">
     <div class="confirm-icon" id="confirm-icon">🗑</div>
     <div class="confirm-msg" id="confirm-msg">هل أنت متأكد؟</div>
@@ -460,181 +456,190 @@ textarea.inp{resize:vertical;min-height:55px;}
   </div>
 </div>
 
-<!-- TOAST CONTAINER -->
 <div id="toast-wrap"></div>
 
 <script>
-// ==================== DATA ====================
-const DEFAULT_CATS=[
-  {id:'general',icon:'🌍',name:'معلومات عامة',desc:'أسئلة متنوعة وممتعة'},
-  {id:'geo',icon:'🗺️',name:'جغرافيا',desc:'دول وعواصم ومدن'},
-  {id:'sports',icon:'⚽',name:'رياضة',desc:'كرة قدم وأكثر'},
-  {id:'science',icon:'🔬',name:'علوم',desc:'كيمياء وفيزياء وطب'},
-  {id:'letters',icon:'📝',name:'حروف',desc:'لغة عربية وكلمات'},
-  {id:'riddles',icon:'🧩',name:'ألغاز',desc:'فكر وحل وتسلية'},
-  {id:'fursan',icon:'🐎',name:'مدرسة الفرسان',desc:'مدارس الفرسان الأهلية المكية'},
-  {id:'founding',icon:'🌴',name:'يوم التأسيس',desc:'تأسيس المملكة العربية السعودية'},
-  {id:'national',icon:'🇸🇦',name:'اليوم الوطني',desc:'يوم المملكة العربية السعودية'},
-  {id:'ramadan',icon:'🌙',name:'رمضان',desc:'شهر رمضان المبارك'},
+// ============================================================
+// DATA: 6 فئات × 12 سؤال (4 مستويات × 3 نقاط + صعوبة مزيج)
+// BOX_PTS = [200, 400, 600, 800]  ← 4 صفوف الآن
+// ============================================================
+const BOX_PTS = [200, 400, 600, 800];
+
+// diff: 'hard' | 'vhard'
+const DEFAULT_CATS = [
+  {
+    id:'general', icon:'🧠', name:'معلومات عامة', desc:'أسئلة متنوعة تتحدى عقلك',
+    questions:[
+      // 200 — صعب
+      {q:'ما اسم المعاهدة التي أنهت الحرب العالمية الأولى رسمياً؟',opts:['اتفاقية جنيف','معاهدة فرساي','ميثاق عصبة الأمم','معاهدة لندن'],correctOpt:1,openEnded:false,ans:'',diff:'hard'},
+      {q:'كم عدد الحروف في اللغة العربية الفصحى؟',opts:['26','28','30','32'],correctOpt:1,openEnded:false,ans:'',diff:'hard'},
+      // 400 — صعب
+      {q:'من كتب رواية "ألف شمس مشرقة"؟',opts:['نجيب محفوظ','خالد حسيني','غابرييل ماركيز','أورهان باموق'],correctOpt:1,openEnded:false,ans:'',diff:'hard'},
+      {q:'أيّ دولة لا يمر بها نهر النيل؟',opts:['إثيوبيا','السودان','تشاد','مصر'],correctOpt:2,openEnded:false,ans:'',diff:'hard'},
+      // 600 — صعب جداً
+      {q:'ما الفيلسوف الذي صاغ مبدأ "أنا أفكر إذن أنا موجود"؟',opts:['سقراط','أرسطو','رينيه ديكارت','كانط'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'في أي عام اخترع تيم بيرنرز-لي شبكة الويب العالمية؟',opts:['1983','1989','1993','1997'],correctOpt:1,openEnded:false,ans:'',diff:'vhard'},
+      // 800 — صعب جداً
+      {q:'ما اسم أقدم دستور مكتوب لا يزال سارياً في العالم؟',opts:['دستور فرنسا','دستور المملكة المتحدة','دستور الولايات المتحدة','الماغنا كارتا'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'أيّ لغة تمتلك أكبر عدد من الناطقين بها كلغة أم؟',opts:['الإنجليزية','الإسبانية','الماندرين الصينية','الهندية'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      // إضافيان للتنويع
+      {q:'ما وحدة قياس زاوية الصوت بالنسبة لشدته العلمية؟',opts:['هرتز','ديسيبل','واط','كاندال'],correctOpt:1,openEnded:false,ans:'',diff:'vhard'},
+      {q:'ما اسم أول رحلة بشرية هبطت على القمر؟',opts:['أبوللو 8','أبوللو 10','أبوللو 11','أبوللو 13'],correctOpt:2,openEnded:false,ans:'',diff:'hard'},
+      {q:'من هو مؤلف رواية "الإخوة كارامازوف"؟',opts:['تولستوي','تورغينيف','دوستويفسكي','تشيخوف'],correctOpt:2,openEnded:false,ans:'',diff:'hard'},
+      {q:'ما الاسم الحقيقي لـ"مارك توين"؟',opts:['صمويل كليمنز','هنري روجرز','بنيامين فيرنيه','ويليام ديلون'],correctOpt:0,openEnded:false,ans:'',diff:'vhard'},
+    ]
+  },
+  {
+    id:'geo', icon:'🌍', name:'جغرافيا', desc:'دول وعواصم وأماكن نادرة',
+    questions:[
+      {q:'ما هي أعمق بحيرة في العالم؟',opts:['بحيرة سوبيريور','بحيرة بايكال','بحيرة تنجانيقا','بحيرة فيكتوريا'],correctOpt:1,openEnded:false,ans:'',diff:'hard'},
+      {q:'كم تبلغ مساحة المملكة العربية السعودية تقريباً؟',opts:['1.5 مليون كم²','2 مليون كم²','2.15 مليون كم²','2.5 مليون كم²'],correctOpt:2,openEnded:false,ans:'',diff:'hard'},
+      {q:'ما اسم الصحراء الأكبر في العالم بعد قارة أنتاركتيكا؟',opts:['صحراء غوبي','صحراء أتاكاما','الصحراء الكبرى','ربع الخالي'],correctOpt:2,openEnded:false,ans:'',diff:'hard'},
+      {q:'أيّ دولة تملك أطول حدود برية في العالم؟',opts:['روسيا','الصين','كندا','الولايات المتحدة'],correctOpt:0,openEnded:false,ans:'',diff:'hard'},
+      {q:'ما اسم المضيق الذي يفصل بين أوروبا وأفريقيا؟',opts:['مضيق هرمز','مضيق ملقا','مضيق جبل طارق','مضيق البوسفور'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'ما الدولة الوحيدة التي تحيط بها دولة واحدة من جميع الجهات؟',opts:['موناكو','الفاتيكان','سان مارينو','ليسوتو'],correctOpt:3,openEnded:false,ans:'',diff:'vhard'},
+      {q:'ما اسم أعلى بركان نشط في العالم؟',opts:['جبل فيزوف','جبل إتنا','أوخوس ديل سالادو','ماونا لوا'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'أيّ مدينة تقع على قارتين في آنٍ واحد؟',opts:['موسكو','القاهرة','إسطنبول','تبليسي'],correctOpt:2,openEnded:false,ans:'',diff:'hard'},
+      {q:'ما البحر الأعلى ملوحةً في العالم؟',opts:['البحر الأحمر','البحر الميت','البحر المتوسط','بحيرة قزوين'],correctOpt:1,openEnded:false,ans:'',diff:'vhard'},
+      {q:'كم عدد دول المحيط الهادئ من حيث عدد الجزر؟',opts:['أكثر من 100','أكثر من 500','أكثر من 1000','أكثر من 25000'],correctOpt:3,openEnded:false,ans:'',diff:'vhard'},
+      {q:'ما عاصمة دولة سريلانكا؟',opts:['كولومبو','كاندي','سري جاياواردانابورا كوتي','جافنا'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'ما اسم أقصر نهر في العالم؟',opts:['نهر روي','نهر آفي','نهر ريبي','نهر إيف'],correctOpt:0,openEnded:false,ans:'',diff:'vhard'},
+    ]
+  },
+  {
+    id:'sports', icon:'⚽', name:'رياضة', desc:'أرقام وبطولات وحقائق',
+    questions:[
+      {q:'كم مرة فاز ريال مدريد بدوري أبطال أوروبا حتى 2024؟',opts:['12','14','15','16'],correctOpt:2,openEnded:false,ans:'',diff:'hard'},
+      {q:'من يحمل الرقم القياسي لأسرع إنسان عدواً في التاريخ؟',opts:['كارل لويس','أسافا باول','يوسين بولت','تايسون غاي'],correctOpt:2,openEnded:false,ans:'',diff:'hard'},
+      {q:'في أي مدينة أُقيمت دورة الألعاب الأولمبية 2020 المؤجلة؟',opts:['بكين','سيول','طوكيو','سيدني'],correctOpt:2,openEnded:false,ans:'',diff:'hard'},
+      {q:'كم عدد لاعبي كل فريق في كرة الماء؟',opts:['6','7','8','9'],correctOpt:1,openEnded:false,ans:'',diff:'hard'},
+      {q:'أيّ لاعب فاز بجائزة أفضل لاعب FIFA لعام 2023؟',opts:['هالاند','مبابي','ميسي','بنزيمة'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'ما الرقم القياسي لأكثر أهداف في دوري أبطال أوروبا موسماً واحداً؟',opts:['15','16','17','18'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'كم مسافة سباق التريالثون الأولمبي للسباحة؟',opts:['750م','1000م','1500م','3800م'],correctOpt:0,openEnded:false,ans:'',diff:'vhard'},
+      {q:'من أول لاعب يسجل 100 هدف في مباريات كرة القدم الدولية؟',opts:['كريستيانو رونالدو','علي دائي','غيرد مولر','فيرناندو مورينتيس'],correctOpt:1,openEnded:false,ans:'',diff:'vhard'},
+      {q:'كم طول ملعب كرة السلة الأولمبي الرسمي؟',opts:['24م','26م','28م','30م'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'أيّ بلد فاز بكأس ديفيس أكثر مرة في التاريخ؟',opts:['الولايات المتحدة','أستراليا','سبانيا','سويسرا'],correctOpt:0,openEnded:false,ans:'',diff:'vhard'},
+      {q:'من أحرز أكثر الأهداف في تاريخ كأس العالم لكرة القدم؟',opts:['رونالدو','كلوسه','مولر','فونتين'],correctOpt:1,openEnded:false,ans:'',diff:'hard'},
+      {q:'ما اسم بطولة الجولف الكبرى التي تُقام في أوغوستا؟',opts:['يو إس أوبن','ذا أوبن','ذا ماسترز','بي جي إيه تشامبيونشيب'],correctOpt:2,openEnded:false,ans:'',diff:'hard'},
+    ]
+  },
+  {
+    id:'science', icon:'🔬', name:'علوم', desc:'فيزياء وكيمياء وأحياء متقدمة',
+    questions:[
+      {q:'ما اسم الجسيم الذي يُسمّى "جسيم الله" ويمنح الكتلة للمادة؟',opts:['الكوارك','البوزيترون','بوزون هيغز','النيوترينو'],correctOpt:2,openEnded:false,ans:'',diff:'hard'},
+      {q:'كم عدد نيوترونات ذرة الكربون-14؟',opts:['6','7','8','14'],correctOpt:2,openEnded:false,ans:'',diff:'hard'},
+      {q:'من اكتشف مبدأ عدم اليقين في ميكانيكا الكم؟',opts:['نيلز بور','ماكس بلانك','فيرنر هايزنبرغ','شرودنغر'],correctOpt:2,openEnded:false,ans:'',diff:'hard'},
+      {q:'ما الرقم التقريبي لعدد أفوغادرو؟',opts:['6.02×10²²','6.02×10²³','6.02×10²⁴','6.02×10²⁵'],correctOpt:1,openEnded:false,ans:'',diff:'hard'},
+      {q:'ما الغدة التي تُفرز هرمون الميلاتونين؟',opts:['الدرقية','الصعترية','الصنوبرية','النخامية'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'ما الغاز الذي يشكّل نحو 78% من الغلاف الجوي؟',opts:['الأكسجين','ثاني أكسيد الكربون','النيتروجين','الأرغون'],correctOpt:2,openEnded:false,ans:'',diff:'hard'},
+      {q:'ما الاسم الكيميائي لـ"الملح الصخري"؟',opts:['كبريتات الصوديوم','كلوريد الصوديوم','بيكربونات الصوديوم','نترات الصوديوم'],correctOpt:1,openEnded:false,ans:'',diff:'vhard'},
+      {q:'ما أطول حمض أميني من حيث عدد الذرات؟',opts:['الليوسين','التريبتوفان','الفينيل ألانين','التيروزين'],correctOpt:1,openEnded:false,ans:'',diff:'vhard'},
+      {q:'ما الوحدة الأساسية للشدة الضوئية في النظام الدولي؟',opts:['لومن','لوكس','كاندال','واط'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'أيّ كوكب يملك أكبر عدد من الأقمار في المجموعة الشمسية؟',opts:['المشتري','زحل','أورانوس','نبتون'],correctOpt:1,openEnded:false,ans:'',diff:'vhard'},
+      {q:'ما ترتيب الفلزات حسب التوصيل الكهربائي من الأعلى؟',opts:['نحاس-فضة-ذهب','فضة-نحاس-ذهب','ذهب-فضة-نحاس','فضة-ذهب-نحاس'],correctOpt:1,openEnded:false,ans:'',diff:'vhard'},
+      {q:'كم يبلغ نصف عمر الكربون-14؟',opts:['1,430 سنة','5,730 سنة','14,300 سنة','57,300 سنة'],correctOpt:1,openEnded:false,ans:'',diff:'vhard'},
+    ]
+  },
+  {
+    id:'history', icon:'📜', name:'تاريخ', desc:'حضارات وأحداث وشخصيات',
+    questions:[
+      {q:'في أي عام فتح صلاح الدين الأيوبي القدس؟',opts:['1187','1099','1244','1291'],correctOpt:0,openEnded:false,ans:'',diff:'hard'},
+      {q:'ما اسم الحضارة التي بنت مدينة ماتشو بيتشو؟',opts:['المايا','الأزتيك','الإنكا','الأولمك'],correctOpt:2,openEnded:false,ans:'',diff:'hard'},
+      {q:'من كان أول رئيس للولايات المتحدة؟',opts:['لنكولن','فرانكلين','جيفرسون','جورج واشنطن'],correctOpt:3,openEnded:false,ans:'',diff:'hard'},
+      {q:'في أي عام سقط جدار برلين؟',opts:['1987','1989','1991','1993'],correctOpt:1,openEnded:false,ans:'',diff:'hard'},
+      {q:'ما اسم المعركة التي هُزم فيها نابليون نهائياً عام 1815؟',opts:['أوسترليتز','بورودينو','واترلو','ليبزيغ'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'أيّ إمبراطورية كانت الأوسع مساحةً في التاريخ؟',opts:['الرومانية','البريطانية','المغولية','إمبراطورية الإسكندر'],correctOpt:1,openEnded:false,ans:'',diff:'hard'},
+      {q:'ما اسم القائد الكارثاغي الذي عبر جبال الألب بالفيلة لغزو روما؟',opts:['حسدروبال','ماهربعل','هانيبال بركا','بومليكار'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'أيّ حضارة اخترعت الكتابة المسمارية أول مرة؟',opts:['المصرية','البابلية','السومرية','الأكادية'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'في أي عام وُقّعت وثيقة الماغنا كارتا؟',opts:['1066','1215','1314','1415'],correctOpt:1,openEnded:false,ans:'',diff:'vhard'},
+      {q:'ما اسم أول امرأة تفوز بجائزة نوبل؟',opts:['ماري كوري','جين آدامز','بيرتا فون زوتنر','سيلما لاغرلوف'],correctOpt:0,openEnded:false,ans:'',diff:'hard'},
+      {q:'كم استمرت الحرب المئة عاماً بين إنجلترا وفرنسا فعلياً؟',opts:['100 سنة','112 سنة','116 سنة','99 سنة'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'ما اسم الإمبراطور الروماني الذي أحرق روما وفق بعض الروايات؟',opts:['كاليغولا','كلوديوس','نيرون','دوميتيان'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+    ]
+  },
+  {
+    id:'riddles', icon:'🧩', name:'ألغاز', desc:'فكر بعمق وحل اللغز',
+    questions:[
+      {q:'كلما أضفت إليّ شيئاً أصبحت أخف. ما أنا؟',opts:['الهواء','الثقب','الحفرة','الفراغ'],correctOpt:1,openEnded:false,ans:'',diff:'hard'},
+      {q:'لا فم لي لكنني أخبرك بالوقت، لا يد لي لكنني أدق. ما أنا؟',opts:['التقويم','الساعة','النجوم','الراديو'],correctOpt:1,openEnded:false,ans:'',diff:'hard'},
+      {q:'كلما أسرعت، ازددت فقداناً له. ما هو؟',opts:['الوقت','النفَس','الذاكرة','التوازن'],correctOpt:1,openEnded:false,ans:'',diff:'hard'},
+      {q:'أمشي بلا أرجل وأبكي بلا عيون وأعطيك الحياة. ما أنا؟',opts:['النار','الغيمة','البحر','الريح'],correctOpt:1,openEnded:false,ans:'',diff:'hard'},
+      {q:'في البداية آكلك وفي النهاية تأكلني. ما أنا؟',opts:['المرض','الصدأ','الجوع','النار'],correctOpt:3,openEnded:false,ans:'',diff:'vhard'},
+      {q:'لديّ مدن بلا بيوت وجبال بلا أشجار ومياه بلا أسماك. ما أنا؟',opts:['الصورة','الحلم','الخريطة','الرسم'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'ثلاثة أطباء قالوا إن روبرت أخوهم لكن روبرت قال ليس لديه إخوة. كيف؟',opts:['إنهم يكذبون','روبرت امرأة','الأطباء أخواته','روبرت متبنى'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'ما الشيء الذي كلما كسرته صار أفضل؟',opts:['القواعد','السجل','الصمت','البيضة'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'لديّ رأس وذيل لكن ليس لي جسد. ما أنا؟',opts:['الثعبان','العقرب','القطعة النقدية','السمكة'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'أيّ كلمة في القاموس تُكتب بشكل غلط دائماً؟',opts:['مستحيل','صحيح','غلط','خطأ'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'رجل يعيش في الطابق العاشر، يأخذ المصعد نزولاً دائماً، لكن صعوداً يأخذه فقط للطابق السابع ثم يمشي. لماذا؟',opts:['لريضة','المصعد معطل','هو قصير القامة','يحب السلالم'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+      {q:'ما الشيء الذي يمكنك كسره دون لمسه أو رؤيته؟',opts:['الريح','الوقت','الوعد','الصدى'],correctOpt:2,openEnded:false,ans:'',diff:'vhard'},
+    ]
+  },
 ];
 
-const DEFAULT_QUESTIONS={
-  general:[
-    {q:'كم عدد أيام الأسبوع؟',opts:['5','6','7','8'],correctOpt:2,openEnded:false,ans:''},
-    {q:'ما عاصمة المملكة العربية السعودية؟',opts:['جدة','الرياض','مكة','الدمام'],correctOpt:1,openEnded:false,ans:''},
-    {q:'كم عدد ألوان قوس قزح؟',opts:['5','6','7','8'],correctOpt:2,openEnded:false,ans:''},
-    {q:'ما هو أكبر حيوان في العالم؟',opts:['الفيل','الحوت الأزرق','الزرافة','الأسد'],correctOpt:1,openEnded:false,ans:''},
-    {q:'كم عدد فصول السنة؟',opts:['2','3','4','5'],correctOpt:2,openEnded:false,ans:''},
-    {q:'في أي قارة تقع السعودية؟',opts:['أفريقيا','آسيا','أوروبا','أمريكا'],correctOpt:1,openEnded:false,ans:''},
-  ],
+// بناء فهرس الأسئلة الافتراضية
+const DEFAULT_QUESTIONS = {};
+DEFAULT_CATS.forEach(cat => {
+  DEFAULT_QUESTIONS[cat.id] = cat.questions.map(q => ({...q, opts:[...q.opts]}));
+});
 
-  geo:[
-    {q:'ما عاصمة فرنسا؟',opts:['مدريد','روما','باريس','برلين'],correctOpt:2,openEnded:false,ans:''},
-    {q:'أين تقع الأهرامات؟',opts:['السعودية','مصر','المغرب','الأردن'],correctOpt:1,openEnded:false,ans:''},
-    {q:'ما أكبر قارة في العالم؟',opts:['أفريقيا','آسيا','أوروبا','أمريكا'],correctOpt:1,openEnded:false,ans:''},
-    {q:'ما عاصمة مصر؟',opts:['الإسكندرية','القاهرة','الأقصر','أسوان'],correctOpt:1,openEnded:false,ans:''},
-    {q:'أي بحر يقع غرب السعودية؟',opts:['البحر الأحمر','الخليج العربي','بحر العرب','المتوسط'],correctOpt:0,openEnded:false,ans:''},
-    {q:'ما عاصمة الإمارات؟',opts:['دبي','الشارقة','أبوظبي','العين'],correctOpt:2,openEnded:false,ans:''},
-  ],
+// ============================================================
+// STATE
+// ============================================================
+let selCatIds = [], questionsData = {};
+let teams = [{name:'',pts:0},{name:'',pts:0}];
+let curTurn = 0;
+let boxUsed = {};
+let lifelines = [{call:false,two:false,hole:false},{call:false,two:false,hole:false}];
+let activeQ = null;
+let timerIv = null, timeLeft = 30;
+let ansRevealed = false;
 
-  sports:[
-    {q:'كم لاعب في فريق كرة القدم داخل الملعب؟',opts:['9','10','11','12'],correctOpt:2,openEnded:false,ans:''},
-    {q:'أي رياضة تستخدم الكرة البرتقالية؟',opts:['الطائرة','السلة','اليد','التنس'],correctOpt:1,openEnded:false,ans:''},
-    {q:'كم شوط في مباراة كرة القدم؟',opts:['1','2','3','4'],correctOpt:1,openEnded:false,ans:''},
-    {q:'من يستخدم المضرب؟',opts:['لاعب التنس','لاعب كرة القدم','السباح','العداء'],correctOpt:0,openEnded:false,ans:''},
-    {q:'كم عدد حلقات شعار الأولمبياد؟',opts:['4','5','6','7'],correctOpt:1,openEnded:false,ans:''},
-    {q:'أي دولة فازت بكأس العالم 2022؟',opts:['البرازيل','فرنسا','الأرجنتين','ألمانيا'],correctOpt:2,openEnded:false,ans:''},
-  ],
-
-  science:[
-    {q:'ما الكوكب الذي نعيش عليه؟',opts:['المريخ','الأرض','الزهرة','عطارد'],correctOpt:1,openEnded:false,ans:''},
-    {q:'ما الغاز الذي نتنفسه؟',opts:['الأكسجين','الهيدروجين','النيتروجين','ثاني أكسيد الكربون'],correctOpt:0,openEnded:false,ans:''},
-    {q:'كم عدد الكواكب في النظام الشمسي؟',opts:['7','8','9','10'],correctOpt:1,openEnded:false,ans:''},
-    {q:'الماء يتكون من الهيدروجين و؟',opts:['النيتروجين','الأكسجين','الكربون','الحديد'],correctOpt:1,openEnded:false,ans:''},
-    {q:'ما أسرع حيوان بري؟',opts:['الفهد','الأسد','الحصان','النمر'],correctOpt:0,openEnded:false,ans:''},
-    {q:'ما لون الشمس؟',opts:['أحمر','أصفر','أزرق','أخضر'],correctOpt:1,openEnded:false,ans:''},
-  ],
-
-  letters:[
-    {q:'كم حرف في الأبجدية العربية؟',opts:['26','27','28','29'],correctOpt:2,openEnded:false,ans:''},
-    {q:'ما أول حرف في كلمة "تفاح"؟',opts:['ت','ف','ا','ح'],correctOpt:0,openEnded:false,ans:''},
-    {q:'ما جمع كلمة "كتاب"؟',opts:['كتب','كتابات','كاتب','كتابين'],correctOpt:0,openEnded:false,ans:''},
-    {q:'ما ضد كلمة "كبير"؟',opts:['طويل','صغير','قصير','عالي'],correctOpt:1,openEnded:false,ans:''},
-    {q:'أي كلمة تعني "منزل"؟',opts:['بيت','قلم','باب','شباك'],correctOpt:0,openEnded:false,ans:''},
-    {q:'أي حرف يأتي بعد الألف؟',opts:['ب','ت','ث','ج'],correctOpt:0,openEnded:false,ans:''},
-  ],
-
-  riddles:[
-    {q:'شيء إذا أخذت منه كبر، ما هو؟',opts:['الحفرة','المال','الوقت','العمر'],correctOpt:0,openEnded:false,ans:''},
-    {q:'له أسنان ولا يعض، ما هو؟',opts:['الأسد','المشط','الكلب','التمساح'],correctOpt:1,openEnded:false,ans:''},
-    {q:'يمشي بلا قدمين، ما هو؟',opts:['السيارة','السحاب','الماء','القطار'],correctOpt:2,openEnded:false,ans:''},
-    {q:'أين يقع البحر الذي لا ماء فيه؟',opts:['الخريطة','الصحراء','الجبل','المدينة'],correctOpt:0,openEnded:false,ans:''},
-    {q:'كلما زاد نقص، ما هو؟',opts:['العمر','المال','الطعام','النوم'],correctOpt:0,openEnded:false,ans:''},
-    {q:'له مفاتيح ولا يفتح باب، ما هو؟',opts:['البيانو','القفل','السيارة','البيت'],correctOpt:0,openEnded:false,ans:''},
-  ],
-    fursan:[
-{q:'ما اسم المدرسة؟',opts:['الفرسان','النور','المجد','الأمل'],correctOpt:0,openEnded:false,ans:''},
-{q:'أين تقع المدرسة؟',opts:['الرياض','مكة','جدة','الدمام'],correctOpt:1,openEnded:false,ans:''},
-{q:'ما رمز الفرسان؟',opts:['حصان','نسر','نخلة','سيف'],correctOpt:0,openEnded:false,ans:''},
-{q:'كم عدد أيام الدراسة بالأسبوع؟',opts:['3','4','5','6'],correctOpt:2,openEnded:false,ans:''},
-{q:'ماذا يرتدي الطلاب؟',opts:['زي مدرسي','ملابس رياضية','ثوب فقط','بدون زي'],correctOpt:0,openEnded:false,ans:''},
-{q:'المدرسة تتبع أي نوع؟',opts:['حكومية','أهلية','عالمية','خاصة جدًا'],correctOpt:1,openEnded:false,ans:''}
-],
-
-founding:[
-{q:'متى يوم التأسيس؟',opts:['22 فبراير','23 سبتمبر','1 رمضان','1 يناير'],correctOpt:0,openEnded:false,ans:''},
-{q:'تأسست الدولة الأولى عام؟',opts:['1727','1932','1902','1818'],correctOpt:0,openEnded:false,ans:''},
-{q:'رمز يوم التأسيس؟',opts:['نخلة','سيفين','علم','قصر'],correctOpt:0,openEnded:false,ans:''},
-{q:'كم عمر الدولة تقريبًا؟',opts:['100 سنة','200 سنة','300 سنة','400 سنة'],correctOpt:2,openEnded:false,ans:''},
-{q:'يوم التأسيس يكون في شهر؟',opts:['فبراير','سبتمبر','مارس','ديسمبر'],correctOpt:0,openEnded:false,ans:''},
-{q:'لباس المناسبة غالبًا؟',opts:['تراثي','رياضي','مدرسي','رسمي أسود'],correctOpt:0,openEnded:false,ans:''}
-],
-
-national:[
-{q:'متى اليوم الوطني؟',opts:['22 فبراير','23 سبتمبر','1 شوال','10 محرم'],correctOpt:1,openEnded:false,ans:''},
-{q:'تم توحيد المملكة عام؟',opts:['1727','1932','1950','1900'],correctOpt:1,openEnded:false,ans:''},
-{q:'كم لون في العلم؟',opts:['1','2','3','4'],correctOpt:1,openEnded:false,ans:''},
-{q:'لون العلم الأساسي؟',opts:['أحمر','أخضر','أزرق','أصفر'],correctOpt:1,openEnded:false,ans:''},
-{q:'يوجد في العلم؟',opts:['نجمة','سيف','قمر','تاج'],correctOpt:1,openEnded:false,ans:''},
-{q:'اليوم الوطني مناسبة؟',opts:['دينية','وطنية','رياضية','عالمية'],correctOpt:1,openEnded:false,ans:''}
-],
-
-ramadan:[
-{q:'كم عدد أركان الإسلام؟',opts:['3','4','5','6'],correctOpt:2,openEnded:false,ans:''},
-{q:'الصيام من؟',opts:['الفجر للمغرب','الظهر للعشاء','المغرب للفجر','يوم كامل'],correctOpt:0,openEnded:false,ans:''},
-{q:'ليلة خير من ألف شهر؟',opts:['ليلة العيد','ليلة القدر','ليلة الجمعة','ليلة النصف'],correctOpt:1,openEnded:false,ans:''},
-{q:'شهر رمضان هو شهر؟',opts:['الصيام','الحج','الزكاة','العيد'],correctOpt:0,openEnded:false,ans:''},
-{q:'يبدأ رمضان برؤية؟',opts:['الشمس','القمر','النجوم','السحاب'],correctOpt:1,openEnded:false,ans:''},
-{q:'بعد رمضان يأتي عيد؟',opts:['الأضحى','الفطر','الوطني','التأسيس'],correctOpt:1,openEnded:false,ans:''}
-],
-
-  
-};
-  
-const BOX_PTS=[200,400,600];
-let selCatIds=[],questionsData={};
-let teams=[{name:'',pts:0},{name:'',pts:0}];
-let curTurn=0;
-let boxUsed={};
-let lifelines=[{call:false,two:false,hole:false},{call:false,two:false,hole:false}];
-let activeQ=null;
-let timerIv=null,timeLeft=30;
-let ansRevealed=false;
-
-// ==================== TOAST ====================
+// ============================================================
+// TOAST
+// ============================================================
 function showToast(msg, type='info', duration=2800){
-  const wrap=document.getElementById('toast-wrap');
-  const t=document.createElement('div');
-  t.className=`toast ${type}`;
-  const icons={success:'✅',error:'❌',info:'⚡'};
-  t.innerHTML=`<span>${icons[type]||'⚡'}</span>${msg}`;
+  const wrap = document.getElementById('toast-wrap');
+  const t = document.createElement('div');
+  t.className = `toast ${type}`;
+  const icons = {success:'✅', error:'❌', info:'⚡'};
+  t.innerHTML = `<span>${icons[type]||'⚡'}</span>${msg}`;
   wrap.appendChild(t);
-  setTimeout(()=>{t.classList.add('hide');setTimeout(()=>t.remove(),320);},duration);
+  setTimeout(()=>{ t.classList.add('hide'); setTimeout(()=>t.remove(), 320); }, duration);
 }
 
-// ==================== CONFIRM MODAL ====================
-let _confirmCb=null;
-function showConfirm(msg,icon,cb){
-  document.getElementById('confirm-msg').textContent=msg;
-  document.getElementById('confirm-icon').textContent=icon||'🗑';
-  document.getElementById('confirm-yes-btn').onclick=()=>{closeConfirm();cb&&cb();};
-  const ov=document.getElementById('confirm-overlay');
-  ov.style.display='flex';
+// ============================================================
+// CONFIRM
+// ============================================================
+function showConfirm(msg, icon, cb){
+  document.getElementById('confirm-msg').textContent = msg;
+  document.getElementById('confirm-icon').textContent = icon || '🗑';
+  document.getElementById('confirm-yes-btn').onclick = ()=>{ closeConfirm(); cb&&cb(); };
+  const ov = document.getElementById('confirm-overlay');
+  ov.style.display = 'flex'; ov.classList.add('open');
 }
 function closeConfirm(){
-  document.getElementById('confirm-overlay').style.display='none';
+  const ov = document.getElementById('confirm-overlay');
+  ov.style.display = 'none'; ov.classList.remove('open');
 }
-document.getElementById('confirm-overlay').addEventListener('click',function(e){if(e.target===this)closeConfirm();});
+document.getElementById('confirm-overlay').addEventListener('click', function(e){ if(e.target===this) closeConfirm(); });
 
-
-const LB_KEY='quizbattle_leaderboard';
-let leaderboard=[];
-let editingLBId=null;
-
-function loadLB(){
-  try{const d=localStorage.getItem(LB_KEY);leaderboard=d?JSON.parse(d):[];}
-  catch(e){leaderboard=[];}
-}
-function saveLB(){
-  try{localStorage.setItem(LB_KEY,JSON.stringify(leaderboard));}
-  catch(e){}
-}
+// ============================================================
+// LEADERBOARD
+// ============================================================
+const LB_KEY = 'quizbattle_leaderboard';
+let leaderboard = [];
+let editingLBId = null;
+function loadLB(){ try{ const d=localStorage.getItem(LB_KEY); leaderboard=d?JSON.parse(d):[]; }catch(e){ leaderboard=[]; } }
+function saveLB(){ try{ localStorage.setItem(LB_KEY, JSON.stringify(leaderboard)); }catch(e){} }
 loadLB();
-
-function showLB(){stopMusic();renderLB();showScreen('s-lb');}
-
+function showLB(){ stopMusic(); renderLB(); showScreen('s-lb'); }
 function renderLB(){
-  const list=document.getElementById('lb-list');
-  const data=[...leaderboard].sort((a,b)=>b.pts-a.pts);
-  if(!data.length){
-    list.innerHTML='<div class="lb-empty">لا يوجد فرق بعد 🎯<br><span style="font-size:.75rem;color:var(--muted)">أضف فريق أو العب مباراة واحفظ نتائجها</span></div>';
-    return;
-  }
-  const rankClasses=['r1','r2','r3'];
-  const rowClasses=['top1','top2','top3'];
-  list.innerHTML=data.map((entry,i)=>{
-    const rk=i<3?rankClasses[i]:'rx';
-    const rc=i<3?rowClasses[i]:'';
+  const list = document.getElementById('lb-list');
+  const data = [...leaderboard].sort((a,b)=>b.pts-a.pts);
+  if(!data.length){ list.innerHTML='<div class="lb-empty">لا يوجد فرق بعد 🎯<br><span style="font-size:.75rem;color:var(--muted)">أضف فريق أو العب مباراة واحفظ نتائجها</span></div>'; return; }
+  const rankClasses=['r1','r2','r3']; const rowClasses=['top1','top2','top3'];
+  list.innerHTML = data.map((entry,i)=>{
+    const rk=i<3?rankClasses[i]:'rx'; const rc=i<3?rowClasses[i]:'';
     const medal=i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1;
     return `<div class="lb-row ${rc}">
       <div class="lb-rank ${rk}">${medal}</div>
@@ -643,148 +648,124 @@ function renderLB(){
         <button class="lb-edit-btn" onclick="openEditModal('${entry.id}')">✏️ تعديل</button>
         <button class="lb-del-btn" onclick="deleteLBEntry('${entry.id}')">🗑</button>
       </div>
-      <div class="lb-pts-grp">
-        <div class="lb-pts">${entry.pts}</div>
-        <div class="lb-pts-lbl">نقطة</div>
-      </div>
+      <div class="lb-pts-grp"><div class="lb-pts">${entry.pts}</div><div class="lb-pts-lbl">نقطة</div></div>
     </div>`;
   }).join('');
 }
-
 function openAddModal(){
-  editingLBId=null;
-  document.getElementById('modal-title').textContent='إضافة فريق';
-  document.getElementById('modal-name').value='';
-  document.getElementById('modal-pts').value='';
+  editingLBId = null;
+  document.getElementById('modal-title').textContent = 'إضافة فريق';
+  document.getElementById('modal-name').value = '';
+  document.getElementById('modal-pts').value = '';
   document.getElementById('lb-modal').classList.add('open');
-  setTimeout(()=>document.getElementById('modal-name').focus(),100);
+  setTimeout(()=>document.getElementById('modal-name').focus(), 100);
 }
-
 function openEditModal(id){
-  const entry=leaderboard.find(e=>e.id===id);
-  if(!entry)return;
-  editingLBId=id;
-  document.getElementById('modal-title').textContent='تعديل الفريق';
-  document.getElementById('modal-name').value=entry.name;
-  document.getElementById('modal-pts').value=entry.pts;
+  const entry = leaderboard.find(e=>e.id===id); if(!entry) return;
+  editingLBId = id;
+  document.getElementById('modal-title').textContent = 'تعديل الفريق';
+  document.getElementById('modal-name').value = entry.name;
+  document.getElementById('modal-pts').value = entry.pts;
   document.getElementById('lb-modal').classList.add('open');
-  setTimeout(()=>document.getElementById('modal-name').focus(),100);
+  setTimeout(()=>document.getElementById('modal-name').focus(), 100);
 }
-
-function closeModal(){
-  document.getElementById('lb-modal').classList.remove('open');
-  editingLBId=null;
-}
-
+function closeModal(){ document.getElementById('lb-modal').classList.remove('open'); editingLBId=null; }
 function saveModalEntry(){
-  const name=document.getElementById('modal-name').value.trim();
-  const pts=parseInt(document.getElementById('modal-pts').value)||0;
-  if(!name){document.getElementById('modal-name').style.borderColor='#ff3737';return;}
-  document.getElementById('modal-name').style.borderColor='';
-  if(editingLBId){
-    const entry=leaderboard.find(e=>e.id===editingLBId);
-    if(entry){entry.name=name;entry.pts=pts;}
-  } else {
-    leaderboard.push({id:'lb_'+Date.now()+'_'+Math.random().toString(36).slice(2),name,pts});
-  }
-  saveLB();
-  closeModal();
-  renderLB();
-  showToast(editingLBId?'تم تعديل الفريق ✏️':'تمت الإضافة بنجاح 🎉', 'success');
+  const name = document.getElementById('modal-name').value.trim();
+  const pts = parseInt(document.getElementById('modal-pts').value)||0;
+  if(!name){ document.getElementById('modal-name').style.borderColor='#ff3737'; return; }
+  document.getElementById('modal-name').style.borderColor = '';
+  if(editingLBId){ const e=leaderboard.find(e=>e.id===editingLBId); if(e){ e.name=name; e.pts=pts; } }
+  else{ leaderboard.push({id:'lb_'+Date.now()+'_'+Math.random().toString(36).slice(2), name, pts}); }
+  saveLB(); closeModal(); renderLB();
+  showToast(editingLBId?'تم تعديل الفريق ✏️':'تمت الإضافة بنجاح 🎉','success');
 }
-
 function deleteLBEntry(id){
-  const entry=leaderboard.find(e=>e.id===id);
-  if(!entry)return;
+  const entry = leaderboard.find(e=>e.id===id); if(!entry) return;
   showConfirm(`حذف فريق "${entry.name}"؟`,'🗑',()=>{
-    leaderboard=leaderboard.filter(e=>e.id!==id);
-    saveLB();renderLB();
-    showToast(`تم حذف "${entry.name}"`, 'error');
+    leaderboard = leaderboard.filter(e=>e.id!==id); saveLB(); renderLB();
+    showToast(`تم حذف "${entry.name}"`,'error');
   });
 }
-
 function clearLB(){
-  if(!leaderboard.length){showToast('لوحة النتائج فارغة أصلاً','info');return;}
-  showConfirm('مسح جميع النتائج نهائياً؟','⚠️',()=>{
-    leaderboard=[];saveLB();renderLB();
-    showToast('تم مسح جميع النتائج','error');
-  });
+  if(!leaderboard.length){ showToast('لوحة النتائج فارغة أصلاً','info'); return; }
+  showConfirm('مسح جميع النتائج نهائياً؟','⚠️',()=>{ leaderboard=[]; saveLB(); renderLB(); showToast('تم مسح جميع النتائج','error'); });
 }
-
-// Close modal on overlay click
-document.getElementById('lb-modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
-
-// keyboard enter on modal
-document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.getElementById('lb-modal').classList.contains('open'))saveModalEntry();});
-
-// Save game result to LB
+document.getElementById('lb-modal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Enter' && document.getElementById('lb-modal').classList.contains('open')) saveModalEntry(); });
 function saveResultToLB(){
-  teams.forEach(t=>{
-    if(t.name&&t.pts>=0){
-      leaderboard.push({id:'lb_'+Date.now()+'_'+Math.random().toString(36).slice(2),name:t.name,pts:t.pts});
-    }
-  });
+  teams.forEach(t=>{ if(t.name && t.pts>=0) leaderboard.push({id:'lb_'+Date.now()+'_'+Math.random().toString(36).slice(2), name:t.name, pts:t.pts}); });
   saveLB();
-  document.getElementById('r-save-lb-btn').textContent='✅ تم الحفظ!';
-  document.getElementById('r-save-lb-btn').disabled=true;
-  document.getElementById('r-save-lb-btn').style.color='#00d26e';
-  document.getElementById('r-save-lb-btn').style.borderColor='#00d26e';
+  const btn = document.getElementById('r-save-lb-btn');
+  btn.textContent='✅ تم الحفظ!'; btn.disabled=true; btn.style.color='#00d26e'; btn.style.borderColor='#00d26e';
   showToast('تم حفظ النتائج في لوحة المتصدرين 🏅','success');
 }
 
-// ==================== GAME LOGIC ====================
+// ============================================================
+// SCREENS
+// ============================================================
 function showScreen(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
 
+// ============================================================
+// SETUP
+// ============================================================
 function buildSetup(){
-  const g=document.getElementById('setup-grid');g.innerHTML='';
+  const g = document.getElementById('setup-grid'); g.innerHTML='';
   DEFAULT_CATS.forEach(cat=>{
-    const el=document.createElement('div');
-    el.className='scat';el.id='sc-'+cat.id;
-    el.innerHTML=`<div class="scat-chk">✓</div><div class="scat-icon">${cat.icon}</div><div class="scat-name">${cat.name}</div><div class="scat-desc">${cat.desc}</div><div class="scat-meta"><span class="spill">6 أسئلة</span><span class="spill">200/400/600</span></div>`;
-    el.onclick=()=>toggleCat(cat.id);g.appendChild(el);
+    const el = document.createElement('div');
+    el.className='scat'; el.id='sc-'+cat.id;
+    el.innerHTML=`<div class="scat-chk">✓</div><div class="scat-icon">${cat.icon}</div><div class="scat-name">${cat.name}</div><div class="scat-desc">${cat.desc}</div><div class="scat-meta"><span class="spill">12 سؤال</span><span class="spill">200—800</span></div>`;
+    el.onclick=()=>toggleCat(cat.id);
+    g.appendChild(el);
   });
 }
 function toggleCat(id){
-  const i=selCatIds.indexOf(id);
-  if(i>=0){selCatIds.splice(i,1);delete questionsData[id];}
-  else{selCatIds.push(id);initQData(id);}
-  document.getElementById('sc-'+id).classList.toggle('sel',selCatIds.includes(id));
-  const n=selCatIds.length;
-  const bar=document.getElementById('sel-bar');
-  bar.textContent=n+' فئة محددة';bar.classList.toggle('has',n>0);
-  document.getElementById('to-q-btn').disabled=n===0;
+  const i = selCatIds.indexOf(id);
+  if(i>=0){ selCatIds.splice(i,1); delete questionsData[id]; }
+  else{ selCatIds.push(id); initQData(id); }
+  document.getElementById('sc-'+id).classList.toggle('sel', selCatIds.includes(id));
+  const n = selCatIds.length;
+  const bar = document.getElementById('sel-bar');
+  bar.textContent = n+' فئة محددة'; bar.classList.toggle('has', n>0);
+  document.getElementById('to-q-btn').disabled = n===0;
 }
-
 function initQData(catId){
   if(!questionsData[catId]){
-    questionsData[catId]=DEFAULT_QUESTIONS[catId]
-      ?DEFAULT_QUESTIONS[catId].map(q=>({...q,opts:[...q.opts]}))
-      :Array.from({length:6},()=>({q:'',ans:'',opts:['','','',''],correctOpt:0,openEnded:false}));
+    questionsData[catId] = DEFAULT_QUESTIONS[catId]
+      ? DEFAULT_QUESTIONS[catId].map(q=>({...q, opts:[...q.opts]}))
+      : Array.from({length:12}, ()=>({q:'',ans:'',opts:['','','',''],correctOpt:0,openEnded:false,diff:'hard'}));
   }
 }
-function goQuestions(){buildQEditor();showScreen('s-questions');}
+
+// ============================================================
+// QUESTION EDITOR  (4 نقاط × 3 أسئلة = 12)
+// ============================================================
+function goQuestions(){ buildQEditor(); showScreen('s-questions'); }
 function buildQEditor(){
-  const tabsEl=document.getElementById('cat-tabs');
-  const sectEl=document.getElementById('cat-sections');
-  tabsEl.innerHTML='';sectEl.innerHTML='';
-  selCatIds.forEach((catId,ci)=>{
+  const tabsEl = document.getElementById('cat-tabs');
+  const sectEl = document.getElementById('cat-sections');
+  tabsEl.innerHTML=''; sectEl.innerHTML='';
+  selCatIds.forEach((catId, ci)=>{
     initQData(catId);
-    const cat=DEFAULT_CATS.find(c=>c.id===catId);
-    const tab=document.createElement('div');
-    tab.className='cat-tab'+(ci===0?' active-tab':'');tab.id='tab-'+catId;
+    const cat = DEFAULT_CATS.find(c=>c.id===catId);
+    const tab = document.createElement('div');
+    tab.className='cat-tab'+(ci===0?' active-tab':''); tab.id='tab-'+catId;
     tab.innerHTML=`${cat.icon} ${cat.name} <span id="tabok-${catId}"></span>`;
-    tab.onclick=()=>switchTab(catId);tabsEl.appendChild(tab);
-    const sec=document.createElement('div');
-    sec.className='qed-section'+(ci===0?' show':'');sec.id='sec-'+catId;
-    BOX_PTS.forEach((pts,pIdx)=>{
-      const grp=document.createElement('div');grp.className='pts-group-lbl';
-      grp.textContent=`${pts} نقطة — سؤالان`;sec.appendChild(grp);
-      [0,1].forEach(qi=>{
-        const gi=pIdx*2+qi;const qd=questionsData[catId][gi];
-        const box=document.createElement('div');box.className='qbox';
+    tab.onclick=()=>switchTab(catId); tabsEl.appendChild(tab);
+    const sec = document.createElement('div');
+    sec.className='qed-section'+(ci===0?' show':''); sec.id='sec-'+catId;
+    BOX_PTS.forEach((pts, pIdx)=>{
+      const grp = document.createElement('div');
+      grp.className='pts-group-lbl';
+      grp.textContent=`${pts} نقطة — 3 أسئلة`;
+      sec.appendChild(grp);
+      [0,1,2].forEach(qi=>{
+        const gi = pIdx*3+qi;
+        const qd = questionsData[catId][gi];
+        const box = document.createElement('div'); box.className='qbox';
         box.innerHTML=`
           <div class="qbox-top">
             <span class="pts-badge">${pts} نقطة — السؤال ${qi+1}</span>
@@ -809,17 +790,18 @@ function buildQEditor(){
         sec.appendChild(box);
       });
     });
-    sectEl.appendChild(sec);updateTabOk(catId);
+    sectEl.appendChild(sec);
+    updateTabOk(catId);
   });
 }
 function switchTab(catId){
   selCatIds.forEach(id=>{
-    document.getElementById('tab-'+id)?.classList.toggle('active-tab',id===catId);
-    const s=document.getElementById('sec-'+id);if(s)s.classList.toggle('show',id===catId);
+    document.getElementById('tab-'+id)?.classList.toggle('active-tab', id===catId);
+    const s = document.getElementById('sec-'+id); if(s) s.classList.toggle('show', id===catId);
   });
 }
 function toggleOpen(catId,gi){
-  const qd=questionsData[catId][gi];qd.openEnded=!qd.openEnded;
+  const qd=questionsData[catId][gi]; qd.openEnded=!qd.openEnded;
   document.getElementById(`tog-${catId}-${gi}`).classList.toggle('on',qd.openEnded);
   document.getElementById(`ob-${catId}-${gi}`).style.display=qd.openEnded?'none':'';
   document.getElementById(`ab-${catId}-${gi}`).style.display=qd.openEnded?'':'none';
@@ -830,36 +812,41 @@ function setCorrect(catId,gi,oi){
   [0,1,2,3].forEach(x=>document.getElementById(`cd-${catId}-${gi}-${x}`)?.classList.toggle('on',x===oi));
   updateTabOk(catId);
 }
-function saveQ(catId,gi){questionsData[catId][gi].q=document.getElementById(`q-${catId}-${gi}`).value;updateTabOk(catId);}
-function saveOpt(catId,gi,oi){questionsData[catId][gi].opts[oi]=document.getElementById(`op-${catId}-${gi}-${oi}`).value;updateTabOk(catId);}
-function saveAns(catId,gi){questionsData[catId][gi].ans=document.getElementById(`an-${catId}-${gi}`).value;updateTabOk(catId);}
-function isBoxOk(catId,gi){const qd=questionsData[catId][gi];if(!qd.q.trim())return false;return qd.openEnded?!!qd.ans.trim():qd.opts.every(o=>o.trim());}
+function saveQ(catId,gi){ questionsData[catId][gi].q=document.getElementById(`q-${catId}-${gi}`).value; updateTabOk(catId); }
+function saveOpt(catId,gi,oi){ questionsData[catId][gi].opts[oi]=document.getElementById(`op-${catId}-${gi}-${oi}`).value; updateTabOk(catId); }
+function saveAns(catId,gi){ questionsData[catId][gi].ans=document.getElementById(`an-${catId}-${gi}`).value; updateTabOk(catId); }
+function isBoxOk(catId,gi){ const qd=questionsData[catId][gi]; if(!qd.q.trim()) return false; return qd.openEnded ? !!qd.ans.trim() : qd.opts.every(o=>o.trim()); }
 function updateTabOk(catId){
-  const all=Array.from({length:6},(_,i)=>i).every(i=>isBoxOk(catId,i));
-  const el=document.getElementById('tabok-'+catId);if(el)el.textContent=all?' ✓':'';
+  const all = Array.from({length:12},(_,i)=>i).every(i=>isBoxOk(catId,i));
+  const el = document.getElementById('tabok-'+catId); if(el) el.textContent=all?' ✓':'';
 }
 function goTeams(){
-  let miss=false;
-  selCatIds.forEach(catId=>{for(let i=0;i<6;i++)if(!isBoxOk(catId,i))miss=true;});
-  if(miss){alert('يرجى ملء جميع الأسئلة والإجابات!');return;}
+  let miss = false;
+  selCatIds.forEach(catId=>{ for(let i=0;i<12;i++) if(!isBoxOk(catId,i)) miss=true; });
+  if(miss){ alert('يرجى ملء جميع الأسئلة والإجابات!'); return; }
   showScreen('s-teams');
 }
 
+// ============================================================
+// GAME START
+// ============================================================
 function startGame(){
   const t1=document.getElementById('t1').value.trim();
   const t2=document.getElementById('t2').value.trim();
   let ok=true;
-  if(!t1){document.getElementById('e1').style.display='block';ok=false;}else document.getElementById('e1').style.display='none';
-  if(!t2){document.getElementById('e2').style.display='block';ok=false;}else document.getElementById('e2').style.display='none';
-  if(!ok)return;
+  if(!t1){ document.getElementById('e1').style.display='block'; ok=false; } else document.getElementById('e1').style.display='none';
+  if(!t2){ document.getElementById('e2').style.display='block'; ok=false; } else document.getElementById('e2').style.display='none';
+  if(!ok) return;
   teams=[{name:t1,pts:0},{name:t2,pts:0}];
-  curTurn=0;lifelines=[{call:false,two:false,hole:false},{call:false,two:false,hole:false}];boxUsed={};
-  selCatIds.forEach(id=>{boxUsed[id]=[[false,false],[false,false],[false,false]];});
+  curTurn=0;
+  lifelines=[{call:false,two:false,hole:false},{call:false,two:false,hole:false}];
+  boxUsed={};
+  // كل فئة: 4 صفوف نقاط × 3 أسئلة
+  selCatIds.forEach(id=>{ boxUsed[id]=[[false,false,false],[false,false,false],[false,false,false],[false,false,false]]; });
   document.getElementById('sc-n1').textContent=t1;
   document.getElementById('sc-n2').textContent=t2;
-  updateScore();buildBoard();showScreen('s-game');
+  updateScore(); buildBoard(); showScreen('s-game');
 }
-
 function updateScore(){
   document.getElementById('sc-p1').textContent=teams[0].pts;
   document.getElementById('sc-p2').textContent=teams[1].pts;
@@ -867,73 +854,87 @@ function updateScore(){
   document.getElementById('sct2').classList.toggle('act',curTurn===1);
   document.getElementById('turn-name').textContent=teams[curTurn].name;
 }
+
+// ============================================================
+// BOARD — 4 صفوف × 3 أزرار
+// ============================================================
 function buildBoard(){
-  const board=document.getElementById('cats-board');board.innerHTML='';
+  const board=document.getElementById('cats-board'); board.innerHTML='';
   selCatIds.forEach(catId=>{
     const cat=DEFAULT_CATS.find(c=>c.id===catId);
-    const col=document.createElement('div');col.className='cat-col';col.id='col-'+catId;
-    const center=document.createElement('div');center.className='pts-mid';
+    const col=document.createElement('div'); col.className='cat-col'; col.id='col-'+catId;
+    // الأيقونة المركزية
+    const center=document.createElement('div'); center.className='pts-mid';
     center.innerHTML=`<div class="col-icon">${cat.icon}</div><div class="col-name">${cat.name}</div>`;
     col.appendChild(center);
     BOX_PTS.forEach((pts,pIdx)=>{
-      const row=document.createElement('div');row.className='pts-row';row.id=`row-${catId}-${pIdx}`;
-      row.appendChild(makePtsNum(catId,pIdx,0,'L'));
-      row.appendChild(makePtsNum(catId,pIdx,1,'R'));
+      const row=document.createElement('div'); row.className='pts-row';
+      [0,1,2].forEach(qi=> row.appendChild(makePtsNum(catId,pIdx,qi)));
       col.appendChild(row);
     });
     board.appendChild(col);
   });
 }
-function makePtsNum(catId,pIdx,qi,side){
+function makePtsNum(catId,pIdx,qi){
   const used=boxUsed[catId][pIdx][qi];
   const el=document.createElement('div');
   el.className='pts-box'+(used?' used':'');
-  el.id=`px-${catId}-${pIdx}-${qi}-${side}`;
-  if(!used){el.textContent=BOX_PTS[pIdx];el.onclick=()=>openBox(catId,pIdx,qi);}
+  el.id=`px-${catId}-${pIdx}-${qi}`;
+  if(!used){ el.textContent=BOX_PTS[pIdx]; el.onclick=()=>openBox(catId,pIdx,qi); }
   return el;
 }
 function refreshBoard(){
   selCatIds.forEach(catId=>BOX_PTS.forEach((_,pIdx)=>{
-    [[0,'L'],[1,'R']].forEach(([qi,side])=>{
-      const el=document.getElementById(`px-${catId}-${pIdx}-${qi}-${side}`);
-      if(!el)return;
+    [0,1,2].forEach(qi=>{
+      const el=document.getElementById(`px-${catId}-${pIdx}-${qi}`); if(!el) return;
       const used=boxUsed[catId][pIdx][qi];
       el.className='pts-box'+(used?' used':'');
-      if(!used){el.textContent=BOX_PTS[pIdx];el.onclick=()=>openBox(catId,pIdx,qi);}
-      else{el.textContent='';el.onclick=null;}
+      if(!used){ el.textContent=BOX_PTS[pIdx]; el.onclick=()=>openBox(catId,pIdx,qi); }
+      else{ el.textContent=''; el.onclick=null; }
     });
   }));
-  const allDone=selCatIds.every(catId=>BOX_PTS.every((_,pIdx)=>[0,1].every(qi=>boxUsed[catId][pIdx][qi])));
-  if(allDone)setTimeout(endGame,1200);
+  const allDone=selCatIds.every(catId=>BOX_PTS.every((_,pIdx)=>[0,1,2].every(qi=>boxUsed[catId][pIdx][qi])));
+  if(allDone) setTimeout(endGame,1200);
 }
 
+// ============================================================
+// OPEN BOX
+// ============================================================
 function openBox(catId,pIdx,qi){
   initQData(catId);
   const cat=DEFAULT_CATS.find(c=>c.id===catId);
-  const gi=pIdx*2+qi;const qd=questionsData[catId][gi];const pts=BOX_PTS[pIdx];
+  const gi=pIdx*3+qi;
+  const qd=questionsData[catId][gi];
+  const pts=BOX_PTS[pIdx];
   const correct=qd.openEnded?qd.ans:qd.opts[qd.correctOpt];
-  activeQ={catId,pIdx,qi,pts,ans:correct,openEnded:qd.openEnded,opts:qd.openEnded?null:[...qd.opts]};
+  activeQ={catId,pIdx,qi,pts,ans:correct,openEnded:qd.openEnded,opts:qd.openEnded?null:[...qd.opts],diff:qd.diff||'hard'};
   ansRevealed=false;
+
   document.getElementById('qm-pts-main').textContent=pts+' نقطة';
   document.getElementById('qm-cat-main').textContent=cat.icon+' '+cat.name;
+
+  // شارة الصعوبة
+  const diffEl=document.getElementById('qm-diff-main');
+  if(qd.diff==='vhard'){ diffEl.textContent='🔥 صعب جداً'; diffEl.className='q-diff-tag vhard'; }
+  else{ diffEl.textContent='⚡ صعب'; diffEl.className='q-diff-tag hard'; }
+
   document.getElementById('q-text-main').textContent=qd.q;
-  document.getElementById('qt-name1').textContent=teams[0].name;
-  document.getElementById('qt-pts1').textContent=teams[0].pts;
-  document.getElementById('qt-name2').textContent=teams[1].name;
-  document.getElementById('qt-pts2').textContent=teams[1].pts;
+  document.getElementById('qt-name1').textContent=teams[0].name; document.getElementById('qt-pts1').textContent=teams[0].pts;
+  document.getElementById('qt-name2').textContent=teams[1].name; document.getElementById('qt-pts2').textContent=teams[1].pts;
   document.getElementById('who-bt1').textContent=teams[0].name;
   document.getElementById('who-bt2').textContent=teams[1].name;
   document.getElementById('who-panel').style.display='none';
   updateLifelinesUI();
-  const optsGrid=document.getElementById('q-opts-grid');optsGrid.innerHTML='';
+
+  const optsGrid=document.getElementById('q-opts-grid'); optsGrid.innerHTML='';
   if(!qd.openEnded){
     optsGrid.style.display='none';
     document.getElementById('q-open-zone').style.display='none';
     document.getElementById('q-mcq-actions').style.display='flex';
     const shuffled=[...qd.opts].sort(()=>Math.random()-.5);
     shuffled.forEach(opt=>{
-      const b=document.createElement('button');b.className='q-opt-btn';b.textContent=opt;
-      b.onclick=()=>chooseOpt(b,opt,correct);optsGrid.appendChild(b);
+      const b=document.createElement('button'); b.className='q-opt-btn'; b.textContent=opt;
+      b.onclick=()=>chooseOpt(b,opt,correct); optsGrid.appendChild(b);
     });
   } else {
     optsGrid.style.display='none';
@@ -943,168 +944,152 @@ function openBox(catId,pIdx,qi){
     document.getElementById('q-reveal-open-btn').style.display='inline-block';
     document.getElementById('q-mcq-actions').style.display='none';
   }
-  showScreen('s-question');startTimer(30);
+  showScreen('s-question'); startTimer(30);
 }
 
 function updateLifelinesUI(){
   [0,1].forEach(ti=>{
-    const prefix=`ll${ti+1}`;
-    document.getElementById(prefix+'-call').classList.toggle('used-ll',lifelines[ti].call);
-    document.getElementById(prefix+'-two').classList.toggle('used-ll',lifelines[ti].two);
-    document.getElementById(prefix+'-hole').classList.toggle('used-ll',lifelines[ti].hole);
+    const p=`ll${ti+1}`;
+    document.getElementById(p+'-call').classList.toggle('used-ll',lifelines[ti].call);
+    document.getElementById(p+'-two').classList.toggle('used-ll',lifelines[ti].two);
+    document.getElementById(p+'-hole').classList.toggle('used-ll',lifelines[ti].hole);
   });
 }
-function showAllOpts(){document.getElementById('q-opts-grid').style.display='grid';}
+function showAllOpts(){ document.getElementById('q-opts-grid').style.display='grid'; }
 function revealMCQAnswer(){
-  if(ansRevealed)return;
-  stopTimer();ansRevealed=true;showAllOpts();
+  if(ansRevealed) return;
+  stopTimer(); ansRevealed=true; showAllOpts();
   document.querySelectorAll('.q-opt-btn').forEach(b=>{
-    b.classList.add('revealed');b.onclick=null;
-    if(b.textContent===activeQ.ans)b.classList.add('correct');
+    b.classList.add('revealed'); b.onclick=null;
+    if(b.textContent===activeQ.ans) b.classList.add('correct');
   });
   document.getElementById('q-mcq-actions').style.display='none';
-  document.getElementById('who-panel').style.display='flex';doFlash();
+  document.getElementById('who-panel').style.display='flex'; doFlash();
 }
 function chooseOpt(btn,chosen,correct){
-  if(ansRevealed)return;
-  stopTimer();ansRevealed=true;
+  if(ansRevealed) return;
+  stopTimer(); ansRevealed=true;
   document.querySelectorAll('.q-opt-btn').forEach(b=>{
-    b.classList.add('revealed');b.onclick=null;
-    if(b.textContent===correct)b.classList.add('correct');
+    b.classList.add('revealed'); b.onclick=null;
+    if(b.textContent===correct) b.classList.add('correct');
   });
-  if(chosen!==correct)btn.classList.add('wrong');
+  if(chosen!==correct) btn.classList.add('wrong');
   document.getElementById('q-mcq-actions').style.display='none';
-  document.getElementById('who-panel').style.display='flex';doFlash();
+  document.getElementById('who-panel').style.display='flex'; doFlash();
 }
 function revealOpen(){
-  if(ansRevealed)return;
-  stopTimer();ansRevealed=true;
+  if(ansRevealed) return;
+  stopTimer(); ansRevealed=true;
   document.getElementById('q-open-text').style.display='block';
   document.getElementById('q-reveal-open-btn').style.display='none';
-  document.getElementById('who-panel').style.display='flex';doFlash();
+  document.getElementById('who-panel').style.display='flex'; doFlash();
 }
 function givePoint(ti){
-  if(!activeQ)return;
+  if(!activeQ) return;
   if(ti>=0){
     teams[ti].pts+=activeQ.pts;
-    // الحفرة: إذا الفريق الي فعّل الحفرة أجاب صح، يُخصم 600 من الفريق الثاني
     if(activeQ._holePenalty && activeQ._holeTeam===ti){
-      const opponent=1-ti;
-      const deduct=Math.min(activeQ.pts,teams[opponent].pts);
-      teams[opponent].pts=Math.max(0,teams[opponent].pts-activeQ.pts);
-      showToast(`🕳️ الحفرة انفجرت! خُصم ${deduct} من ${teams[opponent].name} 💣`,'error',3500);
+      const opp=1-ti;
+      const deduct=Math.min(activeQ.pts,teams[opp].pts);
+      teams[opp].pts=Math.max(0,teams[opp].pts-activeQ.pts);
+      showToast(`🕳️ الحفرة انفجرت! خُصم ${deduct} من ${teams[opp].name} 💣`,'error',3500);
     }
   }
   boxUsed[activeQ.catId][activeQ.pIdx][activeQ.qi]=true;
-  activeQ=null;stopTimer();curTurn=(curTurn+1)%2;
-  updateScore();refreshBoard();showScreen('s-game');
+  activeQ=null; stopTimer(); curTurn=(curTurn+1)%2;
+  updateScore(); refreshBoard(); showScreen('s-game');
 }
-
 function splitPoints(){
-  if(!activeQ)return;
+  if(!activeQ) return;
   const half=Math.floor(activeQ.pts/2);
-  teams[0].pts+=half;
-  teams[1].pts+=half;
+  teams[0].pts+=half; teams[1].pts+=half;
   showToast(`✂️ تم تقسيم ${activeQ.pts} نقطة — كل فريق أخذ ${half}`,'info');
   boxUsed[activeQ.catId][activeQ.pIdx][activeQ.qi]=true;
-  activeQ=null;stopTimer();curTurn=(curTurn+1)%2;
-  updateScore();refreshBoard();showScreen('s-game');
+  activeQ=null; stopTimer(); curTurn=(curTurn+1)%2;
+  updateScore(); refreshBoard(); showScreen('s-game');
 }
 function useLifeline(teamIdx,type){
-  if(lifelines[teamIdx][type])return;
-  lifelines[teamIdx][type]=true;updateLifelinesUI();
+  if(lifelines[teamIdx][type]) return;
+  lifelines[teamIdx][type]=true; updateLifelinesUI();
   if(type==='call'){
     alert(`📞 مساعدة الاتصال بصديق لـ ${teams[teamIdx].name}!\nالمضيف يتصل بالصديق الآن...`);
   } else if(type==='two'){
-    if(!activeQ||activeQ.openEnded)return;
+    if(!activeQ||activeQ.openEnded) return;
     showAllOpts();
     const btns=Array.from(document.querySelectorAll('.q-opt-btn'));
     const wrong=btns.filter(b=>b.textContent!==activeQ.ans&&!b.classList.contains('hidden-ll'));
-    wrong.sort(()=>Math.random()-.5).slice(0,2).forEach(b=>{b.classList.add('hidden-ll');b.onclick=null;});
+    wrong.sort(()=>Math.random()-.5).slice(0,2).forEach(b=>{ b.classList.add('hidden-ll'); b.onclick=null; });
   } else if(type==='hole'){
-    activeQ._holePenalty=true;
-    activeQ._holeTeam=teamIdx;
+    activeQ._holePenalty=true; activeQ._holeTeam=teamIdx;
     showToast(`🕳️ الحفرة مفعّلة لـ ${teams[teamIdx].name}! إذا أجابوا صح يُخصم ${activeQ?activeQ.pts:'نقاط السؤال'} من الخصم 💣`,'info',3500);
   }
 }
-function startTimer(s){stopTimer();timeLeft=s;updateTimerUI();timerIv=setInterval(()=>{timeLeft--;updateTimerUI();if(timeLeft<=0){stopTimer();timeUp();}},1000);}
-function stopTimer(){if(timerIv){clearInterval(timerIv);timerIv=null;}}
+
+// ============================================================
+// TIMER
+// ============================================================
+function startTimer(s){ stopTimer(); timeLeft=s; updateTimerUI(); timerIv=setInterval(()=>{ timeLeft--; updateTimerUI(); if(timeLeft<=0){ stopTimer(); timeUp(); } },1000); }
+function stopTimer(){ if(timerIv){ clearInterval(timerIv); timerIv=null; } }
 function updateTimerUI(){
   const b=document.getElementById('q-timer-el');
   b.textContent=`${String(Math.floor(timeLeft/60)).padStart(2,'0')}:${String(timeLeft%60).padStart(2,'0')}`;
   b.className='q-timer-fixed'+(timeLeft<=10?' danger':timeLeft<=20?' warn':'');
 }
-function timeUp(){if(!activeQ)return;if(!activeQ.openEnded)revealMCQAnswer();else revealOpen();}
+function timeUp(){ if(!activeQ) return; if(!activeQ.openEnded) revealMCQAnswer(); else revealOpen(); }
 
+// ============================================================
+// END GAME
+// ============================================================
 function endGame(){
   stopTimer();
   const w=teams[0].pts>teams[1].pts?0:teams[1].pts>teams[0].pts?1:-1;
-  document.getElementById('rn1').textContent=teams[0].name;
-  document.getElementById('rp1').textContent=teams[0].pts;
-  document.getElementById('rn2').textContent=teams[1].name;
-  document.getElementById('rp2').textContent=teams[1].pts;
+  document.getElementById('rn1').textContent=teams[0].name; document.getElementById('rp1').textContent=teams[0].pts;
+  document.getElementById('rn2').textContent=teams[1].name; document.getElementById('rp2').textContent=teams[1].pts;
   document.getElementById('rc1').classList.toggle('rw',w===0);
   document.getElementById('rc2').classList.toggle('rw',w===1);
-  // Reset save button
   const saveBtn=document.getElementById('r-save-lb-btn');
-  saveBtn.textContent='🏅 حفظ النتائج في لوحة النتائج';
-  saveBtn.disabled=false;
-  saveBtn.style.color='';saveBtn.style.borderColor='';
-  if(w<0){
-    document.getElementById('r-trophy').textContent='🤝';
-    document.getElementById('r-winner').textContent='تعادل!';
-    document.getElementById('r-sub').textContent='الفريقان متساويان';
-  }else{
-    document.getElementById('r-trophy').textContent='🏆';
-    document.getElementById('r-winner').textContent=teams[w].name;
-    document.getElementById('r-sub').textContent=`الفائز بـ ${teams[w].pts} نقطة 🎉`;
-  }
-  showScreen('s-result');if(w>=0){doConfetti();playVictoryMusic();}
+  saveBtn.textContent='🏅 حفظ النتائج في لوحة النتائج'; saveBtn.disabled=false; saveBtn.style.color=''; saveBtn.style.borderColor='';
+  if(w<0){ document.getElementById('r-trophy').textContent='🤝'; document.getElementById('r-winner').textContent='تعادل!'; document.getElementById('r-sub').textContent='الفريقان متساويان'; }
+  else{ document.getElementById('r-trophy').textContent='🏆'; document.getElementById('r-winner').textContent=teams[w].name; document.getElementById('r-sub').textContent=`الفائز بـ ${teams[w].pts} نقطة 🎉`; }
+  showScreen('s-result');
+  if(w>=0){ doConfetti(); playVictoryMusic(); }
 }
-
 function restartAll(){
   stopMusic();
-  selCatIds=[];questionsData={};teams=[{name:'',pts:0},{name:'',pts:0}];curTurn=0;boxUsed={};activeQ=null;
-  lifelines=[{call:false,two:false,hole:false},{call:false,two:false,hole:false}];stopTimer();
-  document.getElementById('t1').value='';document.getElementById('t2').value='';
+  selCatIds=[]; questionsData={}; teams=[{name:'',pts:0},{name:'',pts:0}]; curTurn=0; boxUsed={}; activeQ=null;
+  lifelines=[{call:false,two:false,hole:false},{call:false,two:false,hole:false}]; stopTimer();
+  document.getElementById('t1').value=''; document.getElementById('t2').value='';
   document.querySelectorAll('.scat').forEach(c=>c.classList.remove('sel'));
   document.getElementById('sel-bar').textContent='0 فئة محددة';
   document.getElementById('sel-bar').classList.remove('has');
   document.getElementById('to-q-btn').disabled=true;
   showScreen('s-cats');
 }
-
-function doFlash(){const f=document.getElementById('flash');f.classList.add('on');setTimeout(()=>f.classList.remove('on'),180);}
+function doFlash(){ const f=document.getElementById('flash'); f.classList.add('on'); setTimeout(()=>f.classList.remove('on'),180); }
 function doConfetti(){
   const cs=['#FFD700','#FFC200','#fff','#ffee00','#ff9900'];
-  for(let i=0;i<90;i++)setTimeout(()=>{
-    const e=document.createElement('div');e.className='cp';
-    Object.assign(e.style,{left:Math.random()*100+'vw',background:cs[Math.random()*cs.length|0],
-      width:(Math.random()*10+4)+'px',height:(Math.random()*10+4)+'px',
-      borderRadius:Math.random()>.5?'50%':'2px',animationDuration:(Math.random()*2+2)+'s'});
-    document.body.appendChild(e);setTimeout(()=>e.remove(),4000);
-  },i*35);
+  for(let i=0;i<90;i++) setTimeout(()=>{
+    const e=document.createElement('div'); e.className='cp';
+    Object.assign(e.style,{left:Math.random()*100+'vw',background:cs[Math.random()*cs.length|0],width:(Math.random()*10+4)+'px',height:(Math.random()*10+4)+'px',borderRadius:Math.random()>.5?'50%':'2px',animationDuration:(Math.random()*2+2)+'s'});
+    document.body.appendChild(e); setTimeout(()=>e.remove(),4000);
+  }, i*35);
 }
 
-// ==================== VICTORY MUSIC ====================
+// ============================================================
+// MUSIC
+// ============================================================
 let victoryAudio=null;
-
-function stopMusic(){
-  if(victoryAudio){
-    victoryAudio.pause();
-    victoryAudio.currentTime=0;
-    victoryAudio=null;
-  }
-}
-
+function stopMusic(){ if(victoryAudio){ victoryAudio.pause(); victoryAudio.currentTime=0; victoryAudio=null; } }
 function playVictoryMusic(){
   stopMusic();
   victoryAudio=new Audio('Download.mp4');
-  victoryAudio.loop=false;
-  victoryAudio.volume=0.8;
+  victoryAudio.loop=false; victoryAudio.volume=0.8;
   victoryAudio.play().catch(e=>console.log('audio blocked:',e));
 }
 
+// ============================================================
+// INIT
+// ============================================================
 buildSetup();
 </script>
 </body>
